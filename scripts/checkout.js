@@ -2,14 +2,14 @@ import {cart} from '..data/cart.js';
 import {products} from '../data/products.js';
 
 
-let cartSummaryHTML= '';
+let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
 
   let matchingProduct;
   products.forEach((product) => {
-    if (product.id === productId)
+    if(product.id === productId)
     {
       matchingProduct = product;
     }
@@ -91,8 +91,7 @@ cart.forEach((cartItem) => {
                         </div>
                         </div>
                         `
-                        ;
                       });
 
-document.querySelector('.js-order-sammary').innerHTML = cartSummaryHTML;
+document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
 console.log("hello");
