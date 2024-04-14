@@ -98,4 +98,4 @@ cartSummaryHTML +=
 });
 
 document.querySelector('.js-oder-summary').innerHTML = cartSummaryHTML;
-console.log(cartSummaryHtML);
+console.log(cartSummaryHTML);
