@@ -94,5 +94,5 @@ cart.forEach((cartItem) => {
                         ;
                       });
 
-conssole.log(cartSummaryHTML);
-
+document.querySelector('.js-order-sammary').innerHTML = cartSummaryHTML;
+console.log("hello");
