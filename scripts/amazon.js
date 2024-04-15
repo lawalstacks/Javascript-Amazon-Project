@@ -3,7 +3,7 @@ import { products } from '../data/products.js';
 import {formatCurrency} from './utils/money.js'
 
 
-
+updateCartQuantity();
 let productHtml = ''
 products.forEach((product) => {
   const html = `
@@ -75,8 +75,12 @@ function updateCartQuantity(){
     cart.forEach((item) => {
       cartQuantity += item.quantity;
     });
-    
+    if(cartQuantity === 0){
+      cartQuantity = '';
+    }
+    else{
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+    }
 }
 
 document.querySelectorAll(
