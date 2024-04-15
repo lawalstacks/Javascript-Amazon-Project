@@ -3,7 +3,7 @@ import { products } from '../data/products.js';
 
 
 
-updateCartQuantity();
+
 let productHtml = ''
 products.forEach((product) => {
   const html = `
@@ -77,7 +77,6 @@ function updateCartQuantity(){
     });
     
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-    console.log(Number(document.querySelector(`.js-quantity-selector.${products.id}`).value));
 }
 
 document.querySelectorAll(
