@@ -29,3 +29,13 @@ export function addToCart(productId){
 
 }
 
+export function removeFromCart(productId){
+  const newCart = [];
+  
+  cart.forEach((cartItem) =>{
+    if(cartItem.producId !== productId){
+      newCart.push(cartItem);
+    }
+  });
+  cart = newCart;
+}
