@@ -1,8 +1,9 @@
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {cart,removeFromCart,calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js'
 
-import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+//import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 import {deliveryOptions} from '../data/deliveryOptions.js';
 
@@ -56,7 +57,7 @@ cart.forEach((cartItem) => {
                           <div class="delivery-options">
                             <div class="delivery-options-title">
                               Choose a delivery option:
-                              ${deliveryOptionsHTML(matchingProduct)}
+                              ${deliveryOptionsHTML(matchingProduct,cartItem)}
                             </div>
                             </div>
                               </div>
