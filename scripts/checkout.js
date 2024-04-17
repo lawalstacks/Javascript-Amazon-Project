@@ -1,13 +1,13 @@
 import {cart,removeFromCart,calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js'
-//import dayjs from 'https://unpkg.com/dayjs@1.12.10/esm/index.js'
+
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 import {deliveryOptions} from '../data/deliveryOptions.js';
 
 
-
-//calculateCartQuantity();
+calculateCartQuantity();
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) => {
@@ -55,6 +55,7 @@ cart.forEach((cartItem) => {
                           <div class="delivery-options">
                             <div class="delivery-options-title">
                               Choose a delivery option:
+                              ${deliveryOptionsHTML(matchingProduct)}
                             </div>
                             </div>
                               </div>
@@ -69,11 +70,11 @@ function deliveryOptionsHTML(matchingProduct){
   deliveryOptions.forEach((deliveryOption) => {
  const today = dayjs();
 const deliveryDate = today.add(deliveryOption.deliveryDays,'days')
-const dateString = deliveryDate.format('dddd,MMMM,D');  
+const dateString = deliveryDate.format('dddd,MMMM D');  
 
 const priceString = deliveryOption.priceCents === 0
 ?'FREE'
-:`$${formatCurrency(deliveryOption.priceCents)} - `;
+:`$${formatCurrency(deliveryOption.priceCents)}  `;
 
 console.log(priceString);
              
@@ -103,9 +104,9 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
   link.addEventListener('click', () => {
     const productId = link.dataset.productId;
     removeFromCart(productId);
-        //calculateCartQuantity();
+        calculateCartQuantity();
     document.querySelector(`.js-cart-container-remove-${productId}`).remove();
-        //calculateCartQuantity();
+        calculateCartQuantity();
   });
 });
 
