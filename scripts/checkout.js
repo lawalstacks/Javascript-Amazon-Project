@@ -29,11 +29,21 @@ cart.forEach((cartItem) => {
     }
     
  });
-  
- const today = dayjs();
- const deliveryDate = today.add(deliveryOption.deliveryDays,'days')
- const dateString = deliveryDate.format('dddd,MMMM D');  
+ const deliveryOptionId = cartItem.deliveryOptionId;
+
+ let deliveryOption;
  
+ deliveryOptions.forEach((option) => {
+   if(option.id === deliveryOptionId)
+   {
+     deliveryOption = option;
+   }
+ });
+
+ const today = dayjs();
+const deliveryDate = today.add(deliveryOption.deliveryDays,'days')
+const dateString = deliveryDate.format('dddd,MMMM D');  
+  
 
   cartSummaryHTML += `<div class="cart-item-container js-cart-container-remove-${matchingProduct.id}">
                         <div class="delivery-date">
