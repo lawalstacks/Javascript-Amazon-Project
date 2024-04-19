@@ -3,8 +3,6 @@ import {cart,removeFromCart,calculateCartQuantity,updateDeliveryOption} from '..
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js'
 
-//import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-
 import {deliveryOptions} from '../data/deliveryOptions.js';
 
 
@@ -123,7 +121,6 @@ const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
   return html;
 }
 
-console.log(cartSummaryHTML);
 document.querySelector('.js-order-summary').innerHTML = cartSummaryHTML;
 document.querySelectorAll('.js-delete-link').forEach((link) => {
   link.addEventListener('click', () => {
@@ -146,4 +143,3 @@ document.querySelectorAll('.js-delivery-option').forEach((element) => {
 }
 
 renderOrderSummary();
-//console.log('hello')
