@@ -15,7 +15,7 @@ export const deliveryOptions =[{
 }]
 
 export function getDeliveryOption(deliveryOptionId) {
-  // Tab tolet deliveryOption;
+  let deliveryOption;
  deliveryOptions.forEach((option) => {
    if(option.id === deliveryOptionId)
    {
