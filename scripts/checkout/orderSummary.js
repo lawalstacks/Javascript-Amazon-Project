@@ -10,6 +10,7 @@ import { renderPaymentSummary } from './paymentSummary.js';
 calculateCartQuantity();
 
 export function renderOrderSummary(){
+  
 
 let cartSummaryHTML = '';
 
